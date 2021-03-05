@@ -1,3 +1,11 @@
+/*
+    DSA LEVELUP - Bit Manipulation                                              Date: 04-Mar-2021
+
+1. You are given a word.
+2. You have to generate all abbrevations of that word.
+Note - Use bit manipulation
+*/
+
 import java.util.*;
 
 public class abbreviations_1_using_bits {
