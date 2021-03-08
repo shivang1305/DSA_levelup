@@ -40,7 +40,6 @@ public class n_queens_using_bits {
                 rdaig ^= (1 << (row - i + board.length - 1));
 
             }
-            
         }
     }
 
