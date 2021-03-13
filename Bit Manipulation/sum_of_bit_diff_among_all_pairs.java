@@ -4,6 +4,7 @@
 1. You are given an array of n numbers.
 2. You have to find the sum of bit differences in all pairs that can be formed from n numbers.
 3. Bit difference of two numbers is defined as the count of different bits at same positions in binary representations of two numbers.
+
 */
 
 import java.util.*;
