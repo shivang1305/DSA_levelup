@@ -30,18 +30,15 @@ public class rod_cutting_problem {
             for(int j = 0; j < dp[0].length; j++) 
                 if(i == 0 || j == 0) // same as base condition just i <---> n & j <---> W (replacements)
                     dp[i][j] = 0;
-        }
 
-        // step 2 --> Filling of the remaining indices in the dp matrix with the help of choice daigram            
-        for(int i = 1; i < dp.length; i++) {
-            for(int j = 1; j < dp[0].length; j++) {
-                if(length[i - 1] <= j) 
+                // step 2 --> Filling of the remaining indices in the dp matrix with the help of choice daigram            
+                else if(length[i - 1] <= j) 
                     dp[i][j] = Math.max(price[i - 1] + dp[i][j - length[i - 1]], dp[i - 1][j]);
 
                 else
                     dp[i][j] = dp[i - 1][j];
-            }
         }
+
         return dp[n][L];
     }
 }

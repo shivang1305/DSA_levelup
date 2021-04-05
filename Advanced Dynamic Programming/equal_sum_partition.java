@@ -42,13 +42,7 @@ public class equal_sum_partition {
                     dp[i][j] = true;
 
                 // but for sum = 0 and size = 0, the answer will be true because for 0 sum and 0 elements in the array there can be one possible subset i.e. {} empty subset as its sum is zero and it does not contain any element
-            }
-        }
-
-        // choice daigram
-        for(int i = 1; i < dp.length; i++) { // O(n^2)
-            for(int j = 1; j < dp[0].length; j++) {
-                if(arr[i - 1] <= j) // when the given element in the array is less than the given sum for a subproblem
+                else if(arr[i - 1] <= j) // when the given element in the array is less than the given sum for a subproblem
                     dp[i][j] = (dp[i - 1][j - arr[i - 1]]) || (dp[i - 1][j]); // TRUE || FALSE = TRUE
                 
                 else
