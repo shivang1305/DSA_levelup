@@ -16,7 +16,7 @@ public class longest_repeating_subsequence_length {
     }
 
     public static int longestCommonSubsequence(String X, String Y) {
-        int n = str.length();
+        int n = X.length();
         int[][] dp = new int[n + 1][n + 1];
 
         for(int i = 0; i < dp.length; i++) {
