@@ -1,4 +1,10 @@
-class diameter_of_binary_tree 
+class Node {
+    int data;
+    Node left;
+    Node right;
+}
+
+public class diameter_of_binary_tree 
 {
     //Function to return the diameter of a Binary Tree.
     static int res = Integer.MIN_VALUE;

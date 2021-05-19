@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class scramble_strings {
     static HashMap<String, Integer> hm;
 

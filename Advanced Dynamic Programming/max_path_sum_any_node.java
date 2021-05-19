@@ -1,3 +1,9 @@
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+}
+
 public class max_path_sum_any_node {
     int res = Integer.MIN_VALUE; 
     public int maxPathSum(TreeNode root) {
