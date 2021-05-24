@@ -4,6 +4,7 @@
 3. You are required to print the count of maximum number of non-overlapping bridges.
 */
 
+import java.util.*;
 
 public class max_non_overlapping_bridges {
     public static class Bridge implements Comparable<Bridge> {
