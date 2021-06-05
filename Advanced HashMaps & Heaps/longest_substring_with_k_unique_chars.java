@@ -40,8 +40,11 @@ public class longest_substring_with_k_unique_chars {
 		        else  
 		            hm.put(ch, hm.get(ch) - 1);
 		        
-		        if(hm.size() == k)
-		            break;
+				if(hm.size() == k) {
+					int len = i - j;
+					maxLen = Math.max(maxLen, len);
+					break;
+				}
 		    }
 		    
 		    if(f1 == false && f2 == false)
