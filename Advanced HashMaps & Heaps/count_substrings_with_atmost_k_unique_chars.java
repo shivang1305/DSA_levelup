@@ -1,4 +1,4 @@
-/* ADVANCED HASHMAPS & HEAPS                                                        Date: 05-Jun-2021
+/* ADVANCED HASHMAPS & HEAPS                                              Date: 05-Jun-2021
 1. You are given a string(str) and a number K.
 2. You have to find the count of substrings of the given string that contains at most K unique characters.
 
