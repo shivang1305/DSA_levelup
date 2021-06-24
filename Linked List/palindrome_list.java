@@ -78,6 +78,5 @@ public class palindrome_list {
         return true;
     }
 }
-
 // Time complexity = O(N)
 // Space complexity = O(1)
