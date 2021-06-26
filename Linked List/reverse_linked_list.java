@@ -35,7 +35,39 @@ public class reverse_linked_list {
         
         return prev;
     }
-}
+    // Time complexity = O(N)
+    // Space complexity = O(1)  
 
-// Time complexity = O(N)
-// Space complexity = O(1)
+    /* Approach 2 - using add first method */
+
+    static ListNode tempHead = null;
+    
+    public static void addFirst(ListNode node) {
+        if(tempHead == null)
+            tempHead = node;
+        else {
+            node.next = tempHead;
+            tempHead = node;
+        }
+    }
+
+    public static ListNode reverse(ListNode head) {
+        if(head == null || head.next == null) // base case for length of LL = 0 or 1
+            return head;
+            
+        ListNode curr = head, forw = head;
+        
+        while(curr != null) {
+            forw = curr.next; // backup
+            curr.next = null;
+            
+            addFirst(curr);
+            
+            curr = forw;
+        }
+        
+        return tempHead;
+    }
+    // Time complexity = O(N)
+    // Space complexity = O(1)
+}

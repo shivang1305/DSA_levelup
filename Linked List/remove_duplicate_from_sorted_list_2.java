@@ -52,4 +52,7 @@ public class remove_duplicate_from_sorted_list_2 {
         
         return dummy.next;
     }
+
+    // Time complexity = O(N)
+    // Space complexity = O(1)
 }
