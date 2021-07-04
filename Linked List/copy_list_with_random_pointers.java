@@ -37,6 +37,8 @@ public class copy_list_with_random_pointers {
         }
     }
 
+    /*--------------------------- Approach 1 - Using HashMap --------------------------------*/
+    
     public Node copyRandomList(Node head) {
         HashMap<Node, Node> map = new HashMap<>();
         Node curr = head, copyHead = null, copyCurr = head;
@@ -71,4 +73,53 @@ public class copy_list_with_random_pointers {
         
         return copyHead;
     }
+    // Time Complexity = O(n)
+    // Space Complexity = O(n)
+
+    /*----------------------- Approach 2 - Without using extra space ------------------------*/
+    
+    public Node copyRandomList2(Node head) {
+        if(head == null)
+            return head;
+        
+        Node curr = head, forw = null;
+        
+        // making the copy of each node in linked list and attaching the copied node to the next of orignal node
+        while(curr != null) {
+            forw = curr.next;
+            
+            Node newNode = new Node(curr.val);
+            curr.next = newNode;
+            newNode.next = forw;
+            
+            curr = forw;
+        }
+        
+        curr = head;
+        
+        // settling the random pointers of the copied linked list
+        while(curr != null && curr.next != null) {
+            curr.next.random = (curr.random == null) ? null : curr.random.next;
+            curr = curr.next.next;
+        }
+        
+        curr = head;
+        
+        Node dummy = new Node(-1);
+        Node prev = dummy;
+        
+        // seperating orignal and copied lists
+        while(curr != null && curr.next != null) {
+            prev.next = curr.next;
+            curr.next = curr.next.next;
+            
+            prev = prev.next;
+            curr = curr.next;
+        }
+        
+        return dummy.next;
+    }
+    
+    // Time complexity = O(N)
+    // Space complexity = O(1)
 }
