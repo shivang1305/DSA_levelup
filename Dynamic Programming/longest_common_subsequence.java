@@ -18,7 +18,7 @@ public class longest_common_subsequence {
         scn.close();
     }
 
-    public static int lcsRecursive(String X, String Y, int n, int m) { // tle exceeded
+    public static int lcsRecursive(String X, String Y, int n, int m) { // tle 
         // BASE CONDITION
         if(n == 0 || m == 0)
             return 0;
