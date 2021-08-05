@@ -68,4 +68,53 @@ public class validate_bst {
     
     // Time complexity = O(N)
     // Space complexity = O(1) 
+
+    /* Approach 2 - Using Morris Inorder Traversal */
+    
+    public TreeNode getRightMostNode(TreeNode node, TreeNode curr) {
+        while(node.right != null && node.right != curr)
+            node = node.right;
+        
+        return node;
+    }
+    
+    public boolean isValidBST2(TreeNode root) {
+        TreeNode prev = null, curr = root;
+        
+        while(curr != null) {
+            TreeNode leftNode = curr.left;
+            
+            if(leftNode == null) {
+                if(prev != null && prev.val >= curr.val)
+                    return false;
+                
+                prev = curr;
+                curr = curr.right;
+            }
+            
+            else {
+                leftNode = getRightMostNode(leftNode, curr);
+                
+                if(leftNode.right == null) {
+                    leftNode.right = curr;
+                    curr = curr.left;
+                }
+                
+                else {
+                    if(prev.val >= curr.val)
+                        return false;
+                    
+                    leftNode.right = null;
+                    
+                    prev = curr; // updating the prev node before updating the curr node
+                    curr = curr.right;
+                }
+            }
+        }
+        
+        return true;
+    }
+    
+    // Time complexity = O(n)
+    // Space complexity = O(1) -> no recursion is done so no space of recursion stack is occupied
 }
