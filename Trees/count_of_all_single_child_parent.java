@@ -57,5 +57,5 @@ public class count_of_all_single_child_parent {
 
     // for both the methods
     // Time complexity = O(n)
-    // Space complexity = O(1)
+    // Space complexity = O(log n)
 }

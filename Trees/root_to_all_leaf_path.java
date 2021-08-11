@@ -41,5 +41,8 @@ public class root_to_all_leaf_path {
           rootToAllLeafPath_(root, list, ans);
           
           return ans;
+
+          // Time complexity = O(n)
+          // Space complexity = O(log n)
       }
 }

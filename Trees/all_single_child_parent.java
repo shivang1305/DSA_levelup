@@ -32,4 +32,7 @@ public class all_single_child_parent {
         singleChildParent(root, ans);
         return ans;
       }
+
+      // Time complexity = O(n)
+      // Space complexity = O(log n)
 }

@@ -16,7 +16,7 @@ public class node_to_root_path {
     
     public static boolean find(TreeNode node, int data, ArrayList<TreeNode> arr) {
         if(node == null) // base case 
-        return false;
+            return false;
         
         if(node.val == data) {
             arr.add(node);
@@ -26,7 +26,7 @@ public class node_to_root_path {
         boolean res = find(node.left, data, arr) || find(node.right, data, arr);
         
         if(res) 
-        arr.add(node);
+            arr.add(node);
         
         return res;
         
