@@ -16,8 +16,7 @@ public class convert_BST_to_circular_sorted_DLL {
 
     /* Approach 1 - Using simple inorder traversal & static variables are used */ 
       
-    private static Node dummy = new Node(-1);
-    private static Node prev = dummy;
+    private static Node prev = null;
     
     private static void inorderTrav(Node node) {
         if(node == null) // base case
