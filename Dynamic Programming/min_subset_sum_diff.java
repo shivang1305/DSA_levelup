@@ -30,11 +30,14 @@ public class min_subset_sum_diff {
         int idx = (range % 2 == 0) ? dp[0].length / 2 : (dp[0].length / 2) - 1;
         
         for(int j = 0; j <= idx; j++) {
-            if(dp[n][j] == true) // possible values of s1, s2
+            if(dp[n][j] == true) // possible values of s1, s2 (always exists in last row)
                 minDiff = Math.min(minDiff, range - 2 * j); // obtaining the min diff
         }
 
         return minDiff; // ans
+
+        // Time complexity = O(n^2)
+        // Space complexity = O(n^2)
     }
 
     public static Boolean[][] subsetSum(int[] arr, int sum, int n, Boolean[][] dp) {
