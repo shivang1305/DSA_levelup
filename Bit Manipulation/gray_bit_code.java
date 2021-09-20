@@ -1,9 +1,8 @@
 /*
-    DSA LEVELUP - Bit Manipulation                                              Date: 23-Feb-2021
+    DSA LEVELUP - Bit Manipulation                                        Date: 23-Feb-2021
 
 1. The gray code is a binary numeral system where two successive numbers differ in only one bit.
-2. Given a non-negative integer n representing the total number of bits in the code, print the 
-     sequence of gray code. A gray code sequence must begin with 0.
+2. Given a non-negative integer n representing the total number of bits in the code, print the sequence of gray code. A gray code sequence must begin with 0.
  
  Example:
     Input: 2

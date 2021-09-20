@@ -7,17 +7,20 @@ import java.util.*;
 
 public class largest_subarray_with_0_sum {
     public static int solution(int[] arr) {
-	    HashMap<Integer, Integer> hm = new HashMap<>();
+	    HashMap<Integer, Integer> hm = new HashMap<>(); // hashmap will store the sum and its index
 	    int sum = 0, maxLen = 0;
-	    hm.put(0, -1);
+
+		// here we have initialized hashmap with zero sum because if the sum = 0 is repeated again in the array traversal then we can obtain the length of that subarray.
+
+	    hm.put(0, -1); // sum = 0 at index = -1 before starting array traversal
 	    
 		for(int i = 0; i < arr.length; i++) {
 		    sum += arr[i];
 		    if(hm.containsKey(sum))
-		        maxLen = Math.max(maxLen, i - hm.get(sum));
+		        maxLen = Math.max(maxLen, i - hm.get(sum)); // length will be curr index - last index of same sum (which is obtained from the hashmap)
 		    
 		    else
-		        hm.put(sum, i);
+		        hm.put(sum, i); 
 		}
 		return maxLen;
 	}

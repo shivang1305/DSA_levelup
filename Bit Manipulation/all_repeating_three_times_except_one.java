@@ -41,7 +41,7 @@ public class all_repeating_three_times_except_one {
             tnp2 = tnp2 & (~cwtnp2); // off the bits in 3n + 2
             tn = tn | cwtnp2; // on the bits in 3n (since it was already on in 3n + 2 and came again so it will become 3n + 3 = 3n)
         }
-
+        
         System.out.println(tnp1);
     }
 }
