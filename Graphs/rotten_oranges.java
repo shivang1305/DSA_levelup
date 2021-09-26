@@ -32,23 +32,22 @@ public class rotten_oranges {
             count++; // increasing the no of mins
             int size = que.size();
             
-            for(int i = 0; i < size; i++) {
-                int[] point = que.poll(); 
+            while(size-- > 0) { // level order traversal (BFS)
+                int[] remove = que.poll(); 
                 
                 for(int[] dir: dirs) {
-                    int x = point[0] + dir[0];
-                    int y = point[1] + dir[1];
+                    int x = remove[0] + dir[0];
+                    int y = remove[1] + dir[1];
                     
                     // if the index is getting out of the bounds of grid
                     // or the cell is empty
                     // or the cell contains already rotten orange
-                    if(x < 0 || y < 0 || x >= m || y >= n || grid[x][y] == 0 || grid[x][y] == 2) 
-                        continue;
-                    
-                    grid[x][y] = 2; // make the orange rotten at that place
-                    que.offer(new int[]{x, y}); // push the indices of that place into the queue
-                     
-                    countFresh--; // decrement the number of fresh oranges left in the grid
+                    if(x >= 0 && y >= 0 && x < m && y < n && grid[x][y] == 1) { 
+                        grid[x][y] = 2; // make the orange rotten at that place
+                        que.offer(new int[]{x, y}); // push the indices of that place into the queue
+                        
+                        countFresh--; // decrement the number of fresh oranges left in the grid
+                    }
                 }
             }
         }

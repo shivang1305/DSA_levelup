@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class number_of_distinct_islands {
-    public static StringBuilder psf = new StringBuilder(); // path so far string builder
+  public static StringBuilder psf = new StringBuilder(); // path so far string builder
 
   public static int numDistinctIslands(int[][] arr) {
     HashSet<String> set = new HashSet<>();
