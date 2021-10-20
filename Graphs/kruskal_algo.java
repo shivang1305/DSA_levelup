@@ -17,12 +17,12 @@ public class kruskal_algo {
         }
 
         @Override
-            public int compareTo(Pair o) {
+        public int compareTo(Pair o) {
             return this.wt - o.wt;
         }
     }
 
-    public static int minCostToSupplyWater(int n, int[][] edges) {
+    public static int kruskalMST(int n, int[][] edges) {
         parent = new int[n];
         rank = new int[n];
         
