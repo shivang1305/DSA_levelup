@@ -26,7 +26,7 @@ public class convert_BST_to_circular_sorted_DLL {
         
         node.left = prev;
         prev.right = node;
-        
+
         prev = prev.right;
         
         inorderTrav(node.right);

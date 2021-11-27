@@ -58,15 +58,15 @@ public class all_nodes_k_dist_away {
         find(root, target);
         List<Integer> ans = new ArrayList<>();
         
-        for(int i = 0; i < path.size(); i++) // path size can be O(n) in worst case
+        for(int i = 0; i < path.size(); i++) // path size can be O(log n) in worst case
             kLevelsDown(path.get(i), k - i, (i == 0) ? null : path.get(i - 1), ans);
         
-        // O(n) inside O(n) = O(n^2)
+        // O(log n) inside O(n) = O(n.log n)
         
         return ans;
     }
     
-    // Time complexity = O(n^2) -> every node of the tree is visited twice in worst case
+    // Time complexity = O(n.log n) -> every node of the tree is visited twice in worst case
     // Space complexity = O(n) -> path arraylist without including recursive space
 
     /*-------------------------------------------------------------------------------------*/
@@ -126,6 +126,6 @@ public class all_nodes_k_dist_away {
         return ans;
     }
     
-    // Time complexity = O(N)
+    // Time complexity = O(n.log n)
     // Space complexity = O(1) -> if recursive stack space is not counted
 }

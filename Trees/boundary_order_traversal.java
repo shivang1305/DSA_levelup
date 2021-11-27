@@ -22,6 +22,7 @@ public class boundary_order_traversal {
         return false;
     }
     
+    // O(log N)
     public static void addLeftBoundary(TreeNode node, ArrayList<Integer> res) {
         TreeNode curr = node.left;
         
@@ -36,6 +37,7 @@ public class boundary_order_traversal {
         }
     }
     
+    // O(N)
     public static void addLeaves(TreeNode node, ArrayList<Integer> res) {
         if(node == null)
             return;
@@ -49,6 +51,7 @@ public class boundary_order_traversal {
         addLeaves(node.right, res);
     }
     
+    // O(log N)
     public static void addRightBoundary(TreeNode node, ArrayList<Integer> res) {
         TreeNode curr = node.right;
         ArrayList<Integer> temp = new ArrayList<>();
@@ -79,6 +82,6 @@ public class boundary_order_traversal {
         return ans;
 	}
     
-    // Time complexity = O(N)
+    // Time complexity = O(log N) + O(N) = O(N)
     // Space complexity = O(N) -> for arraylist
 }

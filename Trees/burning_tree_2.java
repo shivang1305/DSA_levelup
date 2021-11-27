@@ -15,7 +15,7 @@ public class burning_tree_2 {
         }
       }
       
-      public static int getTime(TreeNode node, int fireNode, int t) {
+      public static int getTime(TreeNode node, int fireNode) {
           if(node == null)
             return -1;
             
@@ -24,17 +24,17 @@ public class burning_tree_2 {
               return 1;
           }
           
-          int leftTime = getTime(node.left, fireNode, t);
+          int leftTime = getTime(node.left, fireNode);
           
           if(leftTime != -1) {
-              kLevelsDown(node, t + leftTime, node.left);
+              kLevelsDown(node, leftTime, node.left);
               return leftTime + 1;
           }
           
-          int rightTime = getTime(node.right, fireNode, t);
+          int rightTime = getTime(node.right, fireNode);
           
           if(rightTime != -1) {
-              kLevelsDown(node, t + rightTime, node.right);
+              kLevelsDown(node, rightTime, node.right);
               return rightTime + 1;
           }
           
@@ -47,11 +47,10 @@ public class burning_tree_2 {
           if(node == null || node == blocker)
             return;
         
-          if(ans.size() == 0) // first we will calculate the max time to burn the whole tree
-            maxTime = Math.max(maxTime, t);
+          if(ans.size() == t) // first we will calculate the max time to burn the whole tree
+            ans.add(new ArrayList<>());
             
-          else
-            ans.get(t).add(node.val); // then we add the node to the list which has same time index
+          ans.get(t).add(node.val); // then we add the node to the list which has same time index
           
           kLevelsDown(node.left, t + 1, blocker);
           kLevelsDown(node.right, t + 1, blocker);
@@ -60,11 +59,7 @@ public class burning_tree_2 {
       static ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
     
       public static ArrayList<ArrayList<Integer>> burningTree(TreeNode root, int data) {
-        getTime(root, data, 0);
-        for(int i = 0; i <= maxTime; i++) 
-            ans.add(new ArrayList<>()); // so that we can decide how many entries are there in the ans arraylist as per max time to burn the whole tree
-            
-        getTime(root, data, 0);
+        getTime(root, data);
         return ans;
       }
 }

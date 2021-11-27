@@ -12,7 +12,7 @@ public class burning_tree {
         }
       }
       
-      public static int getTime(TreeNode node, int fireNode, int t) {
+      public static int getTime(TreeNode node, int fireNode) {
           if(node == null)
             return -1;
             
@@ -21,17 +21,17 @@ public class burning_tree {
               return 1;
           }
           
-          int leftTime = getTime(node.left, fireNode, t);
+          int leftTime = getTime(node.left, fireNode);
           
           if(leftTime != -1) {
-              kLevelsDown(node, t + leftTime, node.left);
+              kLevelsDown(node, leftTime, node.left);
               return leftTime + 1;
           }
           
-          int rightTime = getTime(node.right, fireNode, t);
+          int rightTime = getTime(node.right, fireNode);
           
           if(rightTime != -1) {
-              kLevelsDown(node, t + rightTime, node.right);
+              kLevelsDown(node, rightTime, node.right);
               return rightTime + 1;
           }
           
@@ -51,7 +51,7 @@ public class burning_tree {
       }
     
       public static int burningTree(TreeNode root, int fireNode) {
-          getTime(root, fireNode, 0);
+          getTime(root, fireNode);
           return maxTime;
       }
     

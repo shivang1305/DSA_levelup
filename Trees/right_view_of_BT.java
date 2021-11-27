@@ -45,7 +45,7 @@ public class right_view_of_BT {
                 ans.add(node.val);
                 
                 if(node.right != null)
-                que2.add(node.right);
+                    que2.add(node.right);
                 if(node.left != null)
                     que2.add(node.left);
                 
@@ -54,7 +54,7 @@ public class right_view_of_BT {
             
             else {
                 if(node.right != null)
-                que2.add(node.right);
+                    que2.add(node.right);
                 if(node.left != null)
                     que2.add(node.left);
             }
